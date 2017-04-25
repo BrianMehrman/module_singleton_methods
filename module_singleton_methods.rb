@@ -2,6 +2,7 @@
 # =================================
 # 1
 # Basic Method Concepts
+
 class Basic
   # instance method
   def i_bar
@@ -21,9 +22,16 @@ class Basic
   end
 end
 
+
+
+
 # Basic inheritence example
 class BasicChild < Basic
 end
+
+
+
+
 
 
 # =================================
@@ -44,12 +52,22 @@ class BasicTest
 end
 
 
+
+
+
+
+
+
+
+
+
+
 # =================================
 # 3
 # Solution to extending through modules
 module Foo
   def self.included(base)
-    base.send :include, InstanceMethods
+    base.include InstanceMethods
     base.extend ClassMethods
   end
 
@@ -71,6 +89,10 @@ class Test
 end
 
 
+
+
+
+
 # =================================
 # 4
 # What happens when you include the module in another module
@@ -85,6 +107,17 @@ end
 class BarTest
   include Bar
 end
+
+
+
+
+
+
+
+
+
+
+
 
 
 # =================================
@@ -104,3 +137,12 @@ end
 class FixedBarTest
   include FixedBar
 end
+
+
+
+
+
+
+
+
+
